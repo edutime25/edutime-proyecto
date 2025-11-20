@@ -1,32 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTime</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EduTime</title>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#1E88E5" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-
-    <header>
-        <h1>EduTime</h1>
-        <p>Organiza tu tiempo. Aprende mejor. Vive mejor.</p>
+  <div id="app" class="page">
+    <header class="topbar">
+      <div class="brand">
+        <img src="/assets/logo-192.png" alt="EduTime" class="logo">
+        <div>
+          <h1 id="brand-title">EduTime</h1>
+          <p id="brand-slogan">Convierte tu tiempo en conocimiento.</p>
+        </div>
+      </div>
+      <nav>
+        <button class="nav-btn" data-view="home">Inicio</button>
+        <button class="nav-btn" data-view="timer">Temporizador</button>
+        <button class="nav-btn" data-view="tasks">Tareas</button>
+        <button class="nav-btn" data-view="stats">Estadísticas</button>
+        <button class="nav-btn" data-view="admin">Admin</button>
+      </nav>
     </header>
 
-    <section id="timer">
-        <h2>Temporizador de estudio</h2>
-        <input type="number" id="minutes" placeholder="Minutos">
-        <button onclick="startTimer()">Iniciar</button>
-        <p id="countdown"></p>
-    </section>
+    <main id="view-container">
+      <!-- Vistas se inyectan con JS -->
+    </main>
 
-    <section id="task-list">
-        <h2>Tus tareas</h2>
-        <input type="text" id="taskInput" placeholder="Escribe una tarea">
-        <button onclick="addTask()">Agregar</button>
-        <ul id="tasks"></ul>
-    </section>
+    <footer class="footer">EduTime — Proyecto escolar • Hecho para concentrarte</footer>
+  </div>
 
-    <script src="app.js"></script>
+  <script src="/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(()=>console.log('SW registrado')).catch(e=>console.log(e));
+    }
+  </script>
 </body>
 </html>
