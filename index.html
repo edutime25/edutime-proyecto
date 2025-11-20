@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EduTime</h1>
+        <p>Organiza tu tiempo. Aprende mejor. Vive mejor.</p>
+    </header>
+
+    <section id="timer">
+        <h2>Temporizador de estudio</h2>
+        <input type="number" id="minutes" placeholder="Minutos">
+        <button onclick="startTimer()">Iniciar</button>
+        <p id="countdown"></p>
+    </section>
+
+    <section id="task-list">
+        <h2>Tus tareas</h2>
+        <input type="text" id="taskInput" placeholder="Escribe una tarea">
+        <button onclick="addTask()">Agregar</button>
+        <ul id="tasks"></ul>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
