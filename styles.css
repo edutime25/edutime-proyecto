@@ -1,0 +1,36 @@
+:root{
+  --blue:#1E88E5;
+  --light:#64B5F6;
+  --dark:#0D47A1;
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; background:var(--bg); color:#03203c}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:linear-gradient(90deg,var(--blue),var(--light));color:white}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:52px;height:52px;border-radius:10px;object-fit:cover}
+.topbar h1{margin:0;font-size:1.2rem}
+.topbar p{margin:0;font-size:0.8rem;opacity:0.95}
+nav{display:flex;gap:8px}
+.nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.2);color:white;padding:8px 10px;border-radius:8px;cursor:pointer}
+.container{max-width:980px;margin:18px auto;padding:12px}
+.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 20px rgba(10,20,40,0.06)}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:14px}
+.time-display{font-family:monospace;font-size:56px;color:var(--dark);margin:8px 0}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+.btn{padding:10px 14px;border-radius:10px;border:none;background:var(--blue);color:white;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid #e6eef9;color:var(--dark)}
+.small{font-size:13px;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:12px}
+.list{display:flex;flex-direction:column;gap:8px;max-height:320px;overflow:auto}
+.session-item, .task-item{display:flex;justify-content:space-between;padding:8px;border-radius:8px;border:1px solid #eef6ff}
+.footer{padding:12px;text-align:center;color:var(--muted);font-size:13px}
+.admin-area{display:flex;flex-direction:column;gap:8px}
+.input, textarea, select{width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef9}
+.logo-preview{width:96px;height:96px;border-radius:12px;object-fit:cover;background:#eef7ff;padding:8px}
+@media(max-width:880px){
+  .grid{grid-template-columns:1fr}
+  nav{display:none}
+}
